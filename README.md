@@ -42,7 +42,7 @@ Interval object:
 ```
 > Both `start` and `end` are time count in *seconds*  
   
-`skipper` return a Promise that will be resolved when all intervals will be skipped:
+`skipper` returns a Promise that will be resolved when all intervals will be skipped:
 ```js
 skipper(vid, skipPoints).then(() => {
     console.log("No more skips!");
