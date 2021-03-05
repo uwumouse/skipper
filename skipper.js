@@ -1,7 +1,7 @@
 /**
  * 
- * @param {string | HTMLVideoElement} vid - video element to be watcher for skips
- * @param { { start: number, end: number }[] } skipPoints - an array of points that are needed to be skipped
+ * @param {string | HTMLVideoElement} vid - a video element that will be watched for skips
+ * @param { { start: number, end: number }[] } skipPoints - an array of intervals that are needed to be skipped
  */
 export default function skipper(vid, skipPoints) {
     if (typeof vid == "string") {

@@ -37,8 +37,8 @@ skipper(vid, skipPoints);
 ```
 
 `skipper` function takes 2 arguments:
-- `vid` (string | HTMLVideoElement) - An Element where skip points will be skipped
-- `skipPoints` (array) - And array of objects that represent intrevals in video that will be skipped.
+- `vid` (string | HTMLVideoElement) - an Element where intervals will be skipped
+- `skipPoints` (array) - an array of objects that represents intrevals in video that will be skipped.
 Interval object:
 ```js
 { 
@@ -48,7 +48,7 @@ Interval object:
 ```
 > Both `start` and `end` are time count in *seconds*  
   
-`skipper` returns a Promise that will be resolved when all intervals will be skipped:
+`skipper` returns a Promise that will be resolved when all intervals are skipped:
 ```js
 skipper(vid, skipPoints).then(() => {
     console.log("No more skips!");
