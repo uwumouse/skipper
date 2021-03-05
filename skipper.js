@@ -3,7 +3,7 @@
  * @param {string | HTMLVideoElement} vid - video element to be watcher for skips
  * @param { { start: number, end: number }[] } skipPoints - an array of points that are needed to be skipped
  */
-export function skipper(vid, skipPoints) {
+export default function skipper(vid, skipPoints) {
     if (typeof vid == "string") {
         vid = document.querySelector(vid);
 

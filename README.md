@@ -13,9 +13,15 @@ Idea for this script inspired by YouTube SponsorBlock's functionality.
 
 # Usage
 - Copy script file into your project.
-- Import it with ES6 `import` statement:
+- Define type `module` for your main script:
+```html
+<!-- index.html -->
+<script src="./main.js" type="module"></script>
+```
+- Import `skipper` with ES6 `import` statement:
 ```js
-import { skipper } from "./skipper.js"
+// main.js
+import skipper from "./skipper.js"
 ```
 - Call the `skipper` function
 ```js
