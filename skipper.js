@@ -4,16 +4,16 @@
  * @param { { start: number, end: number }[] } skipPoints - an array of intervals that are needed to be skipped
  */
 export default function skipper(vid, skipPoints) {
-    if (typeof vid == "string") {
-        vid = document.querySelector(vid);
+    return new Promise((res, rej) => {
+        if (typeof vid == "string") {
+            vid = document.querySelector(vid);
+    
+            if (!vid) rej(new Error(`Element with identifier ${vid} not found.`));
+        }
 
-        if (!vid) throw new Error(`Element with identifier ${vid} not found.`);
-    }
-    if (typeof vid != "object" && vid.nodeName != "VIDEO") {
-        throw new Error("Invalid element. Expected type: VIDEO");
-    }
-
-    return new Promise((res) => {
+        if (!vid || typeof vid != "object" && vid?.nodeName != "VIDEO") {
+            return rej(new Error("Invalid element. Expected type: VIDEO"));
+        }
         // Current part that are going to be skipped
         let currentSkipIntreval = 0;
         const skipInterval = setInterval(() => {
